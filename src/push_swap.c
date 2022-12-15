@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 #include "../42Barcelona_libft/libft.h"
 
 int ft_check_error(char *str)
@@ -18,7 +19,7 @@ int ft_check_error(char *str)
 	//check if duplicates
 	//check if not number
 	//check if not min int or max int
-	if(ft_strncmp(str, "-2147483648", ft_strlen(str) != 0))
+	if(ft_strncmp(str, "-2147483648", ft_strlen(str)) != 0 || ft_strncmp(str, "2147483648", ft_strlen(str)) != 0)
 	{
 		write(1, "Error", 5);
 		exit(-1);
@@ -31,7 +32,7 @@ int main(int argc, char **argv)
 	int i;
 
 	i = 0;
-	if(argc > 2) {
+	if(argc > 1) {
 	while(argv[1][i] != '\0')
 	{
 		ft_check_error(&argv[0][i]);
