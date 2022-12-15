@@ -29,8 +29,8 @@ WHITE = \033[0;97m
 NAME		= push_swap
 
 SRCS_DIR	= src/
-SRCS 		= ${SRCS}push_swap.c
-OBJS 		= ${SRCS}push_swap.o
+SRCS 		= ${SRCS_DIR}push_swap.c
+OBJS 		= ${SRCS_DIR}push_swap.o
 
 
 CC = gcc
@@ -39,7 +39,7 @@ CFLAGS = -Wall -Wextra -Werror
 CFLAGS_D = -Wall -Wextra -Werror -g 
 
 MYLIB_DIR	= 	42Barcelona_libft/
-MYLIB		=	$(MYLIB_DIR)libftprintf.a
+MYLIB		=	$(MYLIB_DIR)libft.a
 
 # ------------------------------ Messages ------------------------------
 
@@ -52,18 +52,18 @@ FCLEANED	=	echo "\n🧼 $(BOLD_YELLOW)Fclean: $(NO_COLOR)Removed the executables
 
 all: 
 	@Make libs
-	@echo "\n🚧 $(YELLOW)Compiling Server..$(NO_COLOR)"	
-	@Make -s $(SERVER)
-	@$(SERV_READY)
+	@echo "\n🚧 $(YELLOW)Compiling..$(NO_COLOR)"	
+	@Make -s $(NAME)
+	@$(PROG_READY)
 
 libs:
 	@echo "\n$(GRAY)➖➖➖➖➖    LIBS    ➖➖➖➖➖➖$(NO_COLOR)\n"
 	@$(MAKE) -C $(MYLIB_DIR)
 	@echo "\n$(GRAY)➖➖➖➖➖ LIBS  DONE ➖➖➖➖➖➖➖➖➖$(NO_COLOR)\n"	
 
-$(SERVER): $(SERVER_OBJS) $(MYLIB) Makefile
-	@echo "🍕 $(WHITE)$(CC) $(CFLAGS) $(SERVER_OBJS) $(MYLIB) -o $(SERVER)$(DEF_COLOR)"
-	@$(CC) $(CFLAGS) $(SERVER_OBJS) $(MYLIB) -o $(SERVER)
+$(NAME): $(OBJS) $(MYLIB) Makefile
+	@echo "🍕 $(WHITE)$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -o $(NAME)$(DEF_COLOR)"
+	@$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -o $(NAME)
 
 $(SRCS)%.o:$(SRCS)%.c
 	@${CC} ${CFLAGS} -c $< -o $@
@@ -71,13 +71,13 @@ $(SRCS)%.o:$(SRCS)%.c
 
 clean:
 	@$(MAKE) clean -C $(MYLIB_DIR)
-	@$(RM) $(SERVER_OBJS) $(CLIENT_OBJS) $(SERVER_OBJS_BONUS) $(CLIENT_OBJS_BONUS)
-	@echo "$(MAGENTA)🚽 Cleaned $(SERVER) & $(CLIENT)$(DEF_COLOR)"
+	@$(RM) $(OBJS)
+	@echo "$(MAGENTA)🚽 Cleaned $(NAME)"
 
 fclean: clean
 	@$(MAKE) fclean -C $(MYLIB_DIR)
-	@$(RM) $(SERVER) $(CLIENT) $(SERVER_BONUS) $(CLIENT_BONUS)
-	@echo "$(MAGENTA)🚽 Fcleaned $(SERVER) & $(CLIENT)$(DEF_COLOR)"	
+	@$(RM) $(NAME)
+	@echo "$(MAGENTA)🚽 Fcleaned $(NAME)"	
 
 re: fclean all
 
