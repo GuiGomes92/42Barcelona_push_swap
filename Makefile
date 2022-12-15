@@ -26,15 +26,11 @@ WHITE = \033[0;97m
 
 #Sources
 
-SERVER = server
-CLIENT = client
+NAME		= push_swap
 
-SRCS 		= src/
-CLIENT_SRCS = ${SRCS}client.c
-SERVER_SRCS = ${SRCS}server.c
-
-CLIENT_OBJS = ${SRCS}client.o
-SERVER_OBJS = ${SRCS}server.o
+SRCS_DIR	= src/
+SRCS 		= ${SRCS}push_swap.c
+OBJS 		= ${SRCS}push_swap.o
 
 
 CC = gcc
@@ -42,14 +38,13 @@ RM = /bin/rm -f
 CFLAGS = -Wall -Wextra -Werror
 CFLAGS_D = -Wall -Wextra -Werror -g 
 
-MYLIB_DIR	= 	printf
-MYLIB		=	$(MYLIB_DIR)/libftprintf.a
+MYLIB_DIR	= 	42Barcelona_libft/
+MYLIB		=	$(MYLIB_DIR)libftprintf.a
 
 # ------------------------------ Messages ------------------------------
 
 COMP_START	=	echo "\n🚧 $(BOLD_YELLOW)Make: $(NO_COLOR)Starting the compilation...\n"
-SERV_READY	=	echo "📥 Server ready!\n"
-CLI_READY	=	echo "📟 Client ready!\n"
+PROG_READY	=	echo "📥 Program ready!\n"
 CLEANED		=	echo "\n💧 $(BOLD_YELLOW)Clean: $(NO_COLOR)Removed all the \".o\" files \n"
 FCLEANED	=	echo "\n🧼 $(BOLD_YELLOW)Fclean: $(NO_COLOR)Removed the executables \n"
 
@@ -59,10 +54,7 @@ all:
 	@Make libs
 	@echo "\n🚧 $(YELLOW)Compiling Server..$(NO_COLOR)"	
 	@Make -s $(SERVER)
-	@$(SERV_READY)	
-	@echo "\n🚧 $(YELLOW)Compiling Client..$(NO_COLOR)"	
-	@Make -s $(CLIENT)
-	@$(CLI_READY)
+	@$(SERV_READY)
 
 libs:
 	@echo "\n$(GRAY)➖➖➖➖➖    LIBS    ➖➖➖➖➖➖$(NO_COLOR)\n"
