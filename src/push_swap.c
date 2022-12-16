@@ -31,54 +31,67 @@ int ft_check_error(char *str)
 
 // print the linked list value
 void printLinkedlist(t_stack *p) {
-  while (p != NULL) {
-    printf("%d ", p->num);
-    p = p->next;
-  }
+   while (p != NULL) {
+     printf("%d ", p->num);
+     p = p->next;
+   }
 }
 
 int create_node() {
   // Initialize nodes
-  t_stack *head;
-  t_stack *one = NULL;
-  t_stack *two = NULL;
-  t_stack *three = NULL;
+//   t_stack *head;
+//   t_stack *one = NULL;
+//   t_stack *two = NULL;
+//   t_stack *three = NULL;
 
   // Allocate memory
-  one = malloc(sizeof(t_stack));
-  two = malloc(sizeof(t_stack));
-  three = malloc(sizeof(t_stack));
+//   one = malloc(sizeof(t_stack));
+//   two = malloc(sizeof(t_stack));
+//   three = malloc(sizeof(t_stack));
 
   // Assign value values
-  one->num = 1;
-  two->num = 2;
-  three->num = 3;
+//   one->num = 1;
+//   two->num = 2;
+//   three->num = 3;
 
   // Connect nodes
-  one->next = two;
-  two->next = three;
-  three->next = NULL;
+//   one->next = two;
+//   two->next = three;
+//   three->next = NULL;
 
   // printing node-value
-  head = one;
-  printLinkedlist(head);
+//   head = one;
+//   printLinkedlist(head);
   return(0);
 }
 
 int main(int argc, char **argv)
 {
 	int i;
+	t_stack	*head;
 
-	i = 0;
+	i = 1;
 	if(argc > 1) {
-	while(argv[1][i] != '\0')
-	{
-		if(ft_check_error(&argv[0][i]) == 0)
+	while(i < argc) {
+		if(i == 1)
 		{
-			create_node();
-		};
+			head = malloc(sizeof(t_list));
+			if (head == NULL)
+				exit(-1);
+			head->num = ft_atoi(argv[i]);
+			head->next = NULL;
+		}
 		i++;
 	}
+	printLinkedlist(head);
+	while(argv[1][i] != '\0')
+	 {
+	 	if(ft_check_error(&argv[0][i]) == 0)
+	 	{
+	 		create_node();
+	 	};
+	 	i++;
+	 }
 	}
 	return (0);
 }
