@@ -16,27 +16,40 @@
 #include "../defines.h"
 #include "./utils.c"
 
+t_stack *create_first_node(t_stack *p, char *c)
+{	
+
+	p = malloc(sizeof(t_list));
+			if (p == NULL)
+				exit(-1);
+			p->num = ft_atoi(c);
+			p->next = NULL;
+	return (p);
+
+}
+
 int main(int argc, char **argv)
 {
 	int i;
 	t_stack	*head;
+	t_stack	*new;
 
 	i = 1;
 	if(argc > 1) {
-	if(ft_check_error(argc, argv) == -1)
-		exit(-1);
+	// if(ft_check_error(argc, argv) == -1)
+	// 	exit(-1);
 	while(i < argc) {
 		if(i == 1)
 		{
-			head = malloc(sizeof(t_list));
-			if (head == NULL)
-				exit(-1);
-			head->num = ft_atoi(argv[i]);
-			head->next = NULL;
+			head = create_first_node(head, argv[1]);
+		}
+		else
+		{
+			ft_lstadd_back(head, new);
 		}
 		i++;
 	}
-	//printLinkedlist(head);
+	printLinkedlist(head);
 	free(head);
 	return (0);
 }}
