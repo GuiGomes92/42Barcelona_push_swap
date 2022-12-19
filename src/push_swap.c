@@ -16,23 +16,29 @@
 #include "../defines.h"
 #include "./utils.c"
 
-t_stack *create_first_node(t_stack *p, char *c)
+void add_end_list(t_stack **head, char *value)
 {	
+	t_stack *new;
+	t_stack *current;
 
-	p = malloc(sizeof(t_list));
-			if (p == NULL)
-				exit(-1);
-			p->num = ft_atoi(c);
-			p->next = NULL;
-	return (p);
-
+	new = malloc(sizeof(t_list));
+		if (new == NULL)
+			exit(-1);
+	new->num = ft_atoi(value);
+	new->next = NULL;
+	
+	current = head;
+	while(current->next != NULL) {
+		current = current->next;
+	}
+	current->next = new;
+	return (head);
 }
 
 int main(int argc, char **argv)
 {
 	int i;
 	t_stack	*head;
-	t_stack	*new;
 
 	i = 1;
 	if(argc > 1) {
@@ -45,7 +51,7 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			ft_lstadd_back(head, new);
+			add_end_list(head, argv[i]);
 		}
 		i++;
 	}
