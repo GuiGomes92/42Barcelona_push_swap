@@ -36,8 +36,11 @@ t_stack *create_first_node(t_stack *p, char *c)
 
 // print the linked list value
 void printLinkedlist(t_stack *p) {
-   while (p != NULL) {
-     printf("%d ", p->num);
-     p = p->next;
+  t_stack* current;
+  current = p;
+
+   while (current != NULL) {
+     printf("%d ", current->num);
+     current = current->next;
    }
 }
