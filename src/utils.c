@@ -12,23 +12,29 @@
 
 #include "../defines.h"
 
-int ft_check_error(int argc, char **argv)
+//check if duplicates
+//check if not min int or max int
+
+int isAllNumbers(int argc, char **argv)
 {
     int i;
+    int j;
 
-    i = 0;
-    //check if not number
-    while(i <= argc)
+    i = 1;
+    j = 0;
+    while(i < argc)
     {
-        if (ft_atoi(argv[i]) == 0)
-        {
-            write(1, "Error", 5);
-            return(-1);
-        }
-        i++;
+      while(argv[i][j] != '\0') {
+      if(ft_isdigit(argv[i][j]) != 1) 
+      {
+          write(1, "Error", 5);
+          return(-1);
+      }
+        j++;
+      }
+      j = 0;
+      i++;
     }
-	//check if duplicates
-	//check if not min int or max int
 	return(0);
 }
 
