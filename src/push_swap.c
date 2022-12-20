@@ -44,6 +44,8 @@ int main(int argc, char **argv)
 	if(argc > 1) {
 		if(isAllNumbers(argc, argv) == -1)
 	 		exit(-1);
+		if(isRepeated(argc, argv) == -1)
+	 		exit(-1);
 		// while(i < argc) {
 		// 	if(i == 1)
 		// 	{

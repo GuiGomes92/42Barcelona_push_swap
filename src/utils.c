@@ -38,6 +38,26 @@ int isAllNumbers(int argc, char **argv)
 	return(0);
 }
 
+int isRepeated(int argc, char **argv)
+{
+    int i;
+    int j;
+
+    i = 1;
+    j = 0;
+    while(i < argc)
+    {
+      while(argv[i][j] != '\0')
+      {
+        printf("%c", argv[i][j]);
+        j++;
+      }
+      j = 0;
+      i++;
+    }
+	return(0);
+}
+
 t_stack *create_first_node(t_stack *p, char *c)
 {	
 
