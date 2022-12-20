@@ -38,6 +38,7 @@ int isAllNumbers(int argc, char **argv)
 	return(0);
 }
 
+//TODO
 int isRepeated(int argc, char **argv)
 {
     int i;
