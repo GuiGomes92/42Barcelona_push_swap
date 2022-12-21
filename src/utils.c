@@ -12,9 +12,6 @@
 
 #include "../pushswap.h"
 
-//check if duplicates
-//check if not min int or max int
-
 int isAllNumbers(int argc, char **argv)
 {
     int i;
@@ -61,6 +58,11 @@ int isRepeated(int argc, char **argv)
     i = 1;
     while(i < argc)
     {
+      if (ft_strcmp(argv[i],"-2147483648") == 0 || ft_strcmp(argv[i],"2147483647") == 0)
+      {
+        write(1, "Error", 5);
+        return(-1);
+      }
       j = i + 1;
       while(j < argc)
       {
