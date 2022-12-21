@@ -61,7 +61,7 @@ libs:
 	@$(MAKE) -C $(MYLIB_DIR)
 	@echo "\n$(GRAY)➖➖➖➖➖ LIBS  DONE ➖➖➖➖➖➖➖➖➖$(NO_COLOR)\n"	
 
-$(NAME): $(OBJS) $(MYLIB) Makefile
+$(NAME): $(OBJS) $(MYLIB) Makefile 
 	@echo "🍕 $(WHITE)$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -o $(NAME)$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -o $(NAME)
 

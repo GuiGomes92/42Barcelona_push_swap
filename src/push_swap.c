@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include "../42Barcelona_libft/libft.h"
-#include "../defines.h"
+#include "../pushswap.h"
 #include "./utils.c"
 
 // void add_end_list(t_stack **head, char *value)

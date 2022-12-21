@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../defines.h"
+#include "../pushswap.h"
 
 //check if duplicates
 //check if not min int or max int
@@ -38,6 +38,20 @@ int isAllNumbers(int argc, char **argv)
 	return(0);
 }
 
+int	ft_strcmp(char *s1, char *s2)
+{
+	size_t	i;
+
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
+}
+
 //TODO
 int isRepeated(int argc, char **argv)
 {
@@ -45,15 +59,18 @@ int isRepeated(int argc, char **argv)
     int j;
 
     i = 1;
-    j = 0;
     while(i < argc)
     {
-      while(argv[i][j] != '\0')
+      j = i + 1;
+      while(j < argc)
       {
-        printf("%c", argv[i][j]);
+        if(ft_strcmp(argv[i], argv[j]) == 0)
+        {
+          write(1, "Error", 5);
+          return(-1);
+        }
         j++;
       }
-      j = 0;
       i++;
     }
 	return(0);

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defines.h                                          :+:      :+:    :+:   */
+/*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbraga-g <gbraga-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINES_H
-# define DEFINES_H
+#ifndef PUSHSWAP_H
+# define PUSHSWAP_H
 
 typedef struct s_stack
 {
@@ -20,5 +20,10 @@ typedef struct s_stack
 	struct s_stack	*next;
 	//struct s_stack	*pre;
 }					t_stack;
+
+int isAllNumbers(int argc, char **argv);
+int isRepeated(int argc, char **argv);
+t_stack *create_first_node(t_stack *p, char *c);
+void printLinkedlist(t_stack *p);
 
 #endif
