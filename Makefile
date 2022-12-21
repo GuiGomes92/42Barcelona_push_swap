@@ -29,8 +29,11 @@ WHITE = \033[0;97m
 NAME		= push_swap
 
 SRCS_DIR	= src/
-SRCS 		= ${SRCS_DIR}push_swap.c
-OBJS 		= ${SRCS_DIR}push_swap.o
+OBJ_DIR		= obj/
+SRC_FILES	=	push_swap utils
+				
+SRC 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 
 CC = gcc
@@ -61,7 +64,7 @@ libs:
 	@$(MAKE) -C $(MYLIB_DIR)
 	@echo "\n$(GRAY)➖➖➖➖➖ LIBS  DONE ➖➖➖➖➖➖➖➖➖$(NO_COLOR)\n"	
 
-$(NAME): $(OBJS) $(MYLIB) Makefile 
+$(NAME): $(OBJS) $(MYLIB) pushswap.h Makefile 
 	@echo "🍕 $(WHITE)$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -o $(NAME)$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -o $(NAME)
 

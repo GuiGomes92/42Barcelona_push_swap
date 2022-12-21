@@ -12,17 +12,10 @@
 
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
+#include "42Barcelona_libft/libft.h"
 
-typedef struct s_stack
-{
-	int				num;
-	//int				index;
-	struct s_stack	*next;
-	//struct s_stack	*pre;
-}					t_stack;
-
-t_stack *create_first_node(t_stack *p, char *c);
-void printLinkedlist(t_stack *p);
+t_list *create_first_node(t_list *p, char *c);
+void printLinkedlist(t_list *p);
 int isAllNumbers(int argc, char **argv);
 int isRepeated(int argc, char **argv);
 int	ft_strcmp(char *s1, char *s2);

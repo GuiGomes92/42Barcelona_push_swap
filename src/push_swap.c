@@ -16,29 +16,11 @@
 #include "../pushswap.h"
 #include "./utils.c"
 
-// void add_end_list(t_stack **head, char *value)
-// {	
-// 	t_stack *new;
-// 	t_stack *current;
-
-// 	new = malloc(sizeof(t_list));
-// 		if (new == NULL)
-// 			exit(-1);
-// 	new->num = ft_atoi(value);
-// 	new->next = NULL;
-	
-// 	current = *head;
-// 	while(current->next != NULL) {
-// 		current = current->next;
-// 	}
-// 	current->next = new;
-// 	return (head);
-// }
-
 int main(int argc, char **argv)
 {
 	int i;
-	t_stack	*head = NULL;
+	t_list	*head = NULL;
+	t_list	**current = &head;
 
 	i = 0;
 	if(argc > 1) {
@@ -46,18 +28,18 @@ int main(int argc, char **argv)
 	 		exit(-1);
 		if(isRepeated(argc, argv) == -1)
 	 		exit(-1);
-		// while(i < argc) {
-		// 	if(i == 1)
-		// 	{
-		// 		head = create_first_node(head, argv[1]);
-		// 	}
-		// else
-		// {
-		// 	add_end_list(head, argv[i]);
-		// }
+		while(i < argc) 
+		{
+		 	if(i == 1)
+				head = create_first_node(head, argv[1]);
+			else {
+				ft_lstadd_back(current, ft_lstnew(argv[i]));
+
+			}
+		}
 		i++;
 	}
-	//printLinkedlist(head);
-	free(head);
+	printLinkedlist(head);
+	//free(head);
 	return (0);
 };

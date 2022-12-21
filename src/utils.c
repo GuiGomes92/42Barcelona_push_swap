@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../pushswap.h"
+#include "../42Barcelona_libft/libft.h"
 
 int isAllNumbers(int argc, char **argv)
 {
@@ -78,25 +79,25 @@ int isRepeated(int argc, char **argv)
 	return(0);
 }
 
-t_stack *create_first_node(t_stack *p, char *c)
+t_list *create_first_node(t_list *p, char *c)
 {	
 
 	p = malloc(sizeof(t_list));
 		if (p == NULL)
 			exit(-1);
-	p->num = ft_atoi(c);
+	p->content = (void*)(size_t)ft_atoi(c);
 	p->next = NULL;
 	return (p);
 
 }
 
 // print the linked list value
-void printLinkedlist(t_stack *p) {
-  t_stack* current;
+void printLinkedlist(t_list *p) {
+  t_list* current;
   current = p;
 
    while (current != NULL) {
-     printf("%d ", current->num);
+     printf("%d ", (int)current->content);
      current = current->next;
    }
 }
