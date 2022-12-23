@@ -66,7 +66,7 @@ libs:
 	@echo "\n$(GRAY)➖➖➖➖➖ LIBS  DONE ➖➖➖➖➖➖➖➖➖$(NO_COLOR)\n"	
 
 -include ${DEPS}
-$(NAME): $(OBJS) $(MYLIB) pushswap.h
+$(NAME): $(OBJS) $(MYLIB) pushswap.h 
 	@echo "🍕 $(WHITE)$(CC) $(CFLAGS) $(OBJ) $(MYLIB) -o -c $(NAME)$(DEF_COLOR)"
 	@$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -o -c $(NAME)
 
