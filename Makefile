@@ -26,7 +26,7 @@ WHITE = \033[0;97m
 
 #Sources
 
-NAME		:= push_swap
+NAME		= push_swap
 
 SRCS_DIR	= src/
 OBJ_DIR		= obj/
@@ -67,8 +67,8 @@ libs:
 
 -include ${DEPS}
 $(NAME): $(OBJS) $(MYLIB) pushswap.h 
-	@echo "🍕 $(WHITE)$(CC) $(CFLAGS) $(OBJ) $(MYLIB) -o -c $(NAME)$(DEF_COLOR)"
-	@$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -o -c $(NAME)
+	@echo "🍕 $(WHITE)$(CC) $(CFLAGS) $(OBJ) $(MYLIB) -c -o $(NAME)$(DEF_COLOR)"
+	@$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -c -o $(NAME)
 
 $(SRC)%.o:$(SRC)%.c
 	@${CC} ${CFLAGS} -c $< -o $@
