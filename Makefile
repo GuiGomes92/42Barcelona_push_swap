@@ -26,14 +26,15 @@ WHITE = \033[0;97m
 
 #Sources
 
-NAME		= push_swap
+NAME		:= push_swap
 
 SRCS_DIR	= src/
 OBJ_DIR		= obj/
-SRC_FILES	=	push_swap utils
+SRC_FILES	= push_swap utils
 				
 SRC 		= 	$(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
+DEPS		=	$(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_FILES)))
 
 
 CC = gcc
@@ -64,11 +65,12 @@ libs:
 	@$(MAKE) -C $(MYLIB_DIR)
 	@echo "\n$(GRAY)➖➖➖➖➖ LIBS  DONE ➖➖➖➖➖➖➖➖➖$(NO_COLOR)\n"	
 
-$(NAME): $(OBJS) $(MYLIB) pushswap.h Makefile 
-	@echo "🍕 $(WHITE)$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -o $(NAME)$(DEF_COLOR)"
-	@$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -o $(NAME)
+-include ${DEPS}
+$(NAME): $(OBJS) $(MYLIB) pushswap.h
+	@echo "🍕 $(WHITE)$(CC) $(CFLAGS) $(OBJ) $(MYLIB) -o -c $(NAME)$(DEF_COLOR)"
+	@$(CC) $(CFLAGS) $(OBJS) $(MYLIB) -o -c $(NAME)
 
-$(SRCS)%.o:$(SRCS)%.c
+$(SRC)%.o:$(SRC)%.c
 	@${CC} ${CFLAGS} -c $< -o $@
 	@echo "🔧 $(GRAY)${CC} ${CFLAGS} -I./ -c $< -o $@$(DEF_COLOR)"
 
