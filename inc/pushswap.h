@@ -12,7 +12,7 @@
 
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
-#include "42Barcelona_libft/libft.h"
+#include "../42Barcelona_libft/libft.h"
 
 t_list *create_first_node(t_list *p, char *c);
 void printLinkedlist(t_list *p);

@@ -13,8 +13,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include "../42Barcelona_libft/libft.h"
-#include "../pushswap.h"
-#include "./utils.c"
+#include "../inc/pushswap.h"
 
 int main(int argc, char **argv)
 {

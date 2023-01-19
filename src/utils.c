@@ -10,8 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "../inc/pushswap.h"
 #include "../42Barcelona_libft/libft.h"
+#include <unistd.h>
+#include <stdio.h>
 
 int isAllNumbers(int argc, char **argv)
 {
