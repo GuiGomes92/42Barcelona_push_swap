@@ -48,12 +48,10 @@ $(NAME) :	$(LIBFT_DIR)/libft.a $(OBJ) Makefile
 		make bonus -sC $(LIBFT_DIR)
 		$(CC) $(CFLAGS) $(FSANITIZE) $(OBJ) $(LIBFT_DIR)/libft.a -o $(NAME)
 
-
-
 clean:
 		$(RM) -r $(OBJ_DIR) $(DEPS)
 		$(RM) $(LIBFT_DIR)/libft.a
-		@make clean -C $(LIBFT_DIR)
+		@make fclean -C $(LIBFT_DIR)
 
 fclean: clean
 		$(RM) $(NAME)
