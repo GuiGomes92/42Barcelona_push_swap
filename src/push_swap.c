@@ -18,8 +18,8 @@
 int main(int argc, char **argv)
 {
 	int i;
-	t_list	*head = NULL;
-	t_list	**current = &head;
+	// t_list	*head = NULL;
+	// t_list	**current = &head;
 
 	i = 0;
 	if(argc > 1) {
@@ -27,18 +27,14 @@ int main(int argc, char **argv)
 	 		exit(-1);
 		if(isRepeated(argc, argv) == -1)
 	 		exit(-1);
-		while(i < argc) 
-		{
-		 	if(i == 1)
-				head = create_first_node(head, argv[1]);
-			else {
-				ft_lstadd_back(current, ft_lstnew(argv[i]));
-
-			}
-		}
-		i++;
+		// while(i < argc) 
+		// {
+		// 		head = lstnew(argv[1]);
+		// 		i++;
+				
+		// }
 	}
-	printLinkedlist(head);
+	// printLinkedlist(head);
 	//free(head);
 	return (0);
 };

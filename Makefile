@@ -20,7 +20,7 @@ SRC_DIR = src/
 
 #FSANITIZE	:= -fsanitize=address -g3
 
-SRC_FILES	= 	push_swap utils
+SRC_FILES	= 	push_swap utils error_handling
 
 SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
