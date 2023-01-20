@@ -18,8 +18,12 @@
 int main(int argc, char **argv)
 {
 	int i;
-	t_stack	*a = NULL;
+	t_stack	*a;
+	t_stack	*b;
 	t_stack	*temp;
+
+	a = NULL;
+	b = NULL;
 
 	i = 1;
 	if(argc > 1) {
