@@ -18,23 +18,24 @@
 int main(int argc, char **argv)
 {
 	int i;
-	// t_list	*head = NULL;
-	// t_list	**current = &head;
+	t_stack	*a = NULL;
+	t_stack	*temp;
 
-	i = 0;
+	i = 1;
 	if(argc > 1) {
 		if(isAllNumbers(argc, argv) == -1)
 	 		exit(-1);
 		if(isRepeated(argc, argv) == -1)
 	 		exit(-1);
-		// while(i < argc) 
-		// {
-		// 		head = lstnew(argv[1]);
-		// 		i++;
+		while(i < argc) 
+		{
+		 	temp = lstnew(ft_atoi(argv[i]));
+			lstadd_back(&a, temp);
+		 	i++;
 				
-		// }
+		}
 	}
-	// printLinkedlist(head);
+	printLinkedlist(a);
 	//free(head);
 	return (0);
 };

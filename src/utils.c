@@ -55,11 +55,11 @@ t_stack	*lstlast(t_stack *lst)
 
 // print the linked list value
 void printLinkedlist(t_stack *p) {
-  t_stack* current;
+  t_stack *current;
   current = p;
 
    while (current != NULL) {
-     printf("%d ", (int)current->content);
+     printf("%d\n", current->content);
      current = current->next;
    }
 }
