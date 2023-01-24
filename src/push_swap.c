@@ -39,6 +39,8 @@ int main(int argc, char **argv)
 			i++;
 		}
 		add_indexes(&a);
+		if (is_sort(&a) == 0)
+			exit(0);
 	}
 	// printLinkedlist(a);
 	print_list(&a, &b);

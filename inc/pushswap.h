@@ -22,6 +22,7 @@ void add_indexes(t_stack **lst);
 int isAllNumbers(int argc, char **argv);
 int find_index(int num, t_stack **lst);
 int lst_len(t_stack **lst);
+int is_sort(t_stack **lst);
 int isRepeated(int argc, char **argv);
 int ft_strcmp(char *s1, char *s2);
 t_stack *create_first_node(t_stack *p, char *c);

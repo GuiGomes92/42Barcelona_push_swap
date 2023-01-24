@@ -130,3 +130,17 @@ int lst_len(t_stack **lst)
 	}
 	return (i);
 }
+
+int is_sort(t_stack **lst)
+{
+	t_stack *temp;
+
+	temp = *lst;
+	while (temp->next)
+	{
+		if (temp->index > temp->next->index)
+			return (1);
+		temp = temp->next;
+	}
+	return (0);
+}
