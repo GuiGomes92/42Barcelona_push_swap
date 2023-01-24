@@ -88,11 +88,14 @@ void print_list(t_stack **list_a, t_stack **list_b)
 void add_indexes(t_stack **lst)
 {
 	t_stack *temp_lst;
+	int i;
 
 	temp_lst = *lst;
+	i = 0;
 	while (temp_lst)
 	{
-		temp_lst->index = 1;
+		temp_lst->index = i;
 		temp_lst = temp_lst->next;
+		i++;
 	}
 }
