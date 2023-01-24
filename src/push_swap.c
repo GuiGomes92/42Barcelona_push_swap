@@ -38,6 +38,7 @@ int main(int argc, char **argv)
 			lstadd_back(&a, temp);
 			i++;
 		}
+		add_indexes(&a);
 	}
 	// printLinkedlist(a);
 	print_list(&a, &b);

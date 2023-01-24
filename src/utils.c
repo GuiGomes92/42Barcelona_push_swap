@@ -84,3 +84,15 @@ void print_list(t_stack **list_a, t_stack **list_b)
 		temp_b = temp_b->next;
 	}
 }
+
+void add_indexes(t_stack **lst)
+{
+	t_stack *temp_lst;
+
+	temp_lst = *lst;
+	while (temp_lst)
+	{
+		temp_lst->index = 1;
+		temp_lst = temp_lst->next;
+	}
+}
