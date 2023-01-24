@@ -74,13 +74,13 @@ void print_list(t_stack **list_a, t_stack **list_b)
 	temp_b = *list_b;
 	while (temp_a)
 	{
-		printf("valor en lista_1:%d, valor en index:%d\n", temp_a->content, temp_a->index);
+		printf("valor en lista_1: %d, valor en index: %d\n", temp_a->content, temp_a->index);
 		temp_a = temp_a->next;
 	}
 	printf("----------------------------------------\n");
 	while (temp_b)
 	{
-		printf("valor en lista_2:%d, valor en index:%d\n", temp_b->content, temp_b->index);
+		printf("valor en lista_2: %d, valor en index: %d\n", temp_b->content, temp_b->index);
 		temp_b = temp_b->next;
 	}
 }
@@ -94,8 +94,24 @@ void add_indexes(t_stack **lst)
 	i = 0;
 	while (temp_lst)
 	{
-		temp_lst->index = i;
+		temp_lst->index = find_index(temp_lst->content, lst);
 		temp_lst = temp_lst->next;
 		i++;
 	}
+}
+
+int find_index(int num, t_stack **lst)
+{
+	t_stack *temp_lst;
+	int i;
+
+	temp_lst = *lst;
+	i = 0;
+	while (temp_lst)
+	{
+		if (temp_lst->content < num)
+			i++;
+		temp_lst = temp_lst->next;
+	}
+	return (i);
 }
