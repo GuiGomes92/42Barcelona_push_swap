@@ -115,3 +115,18 @@ int find_index(int num, t_stack **lst)
 	}
 	return (i);
 }
+
+int lst_len(t_stack **lst)
+{
+	t_stack *temp_lst;
+	int i;
+
+	temp_lst = *lst;
+	i = 0;
+	while (temp_lst)
+	{
+		i++;
+		temp_lst = temp_lst->next;
+	}
+	return (i);
+}
