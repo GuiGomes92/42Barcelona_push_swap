@@ -28,9 +28,7 @@ int main(int argc, char **argv)
 	i = 1;
 	if (argc > 1)
 	{
-		if (isAllNumbers(argc, argv) == -1)
-			exit(-1);
-		if (isRepeated(argc, argv) == -1)
+		if (isAllNumbers(argc, argv) == -1 || isRepeated(argc, argv) == -1)
 			exit(-1);
 		while (i < argc)
 		{
@@ -42,7 +40,6 @@ int main(int argc, char **argv)
 		if (is_sort(&a) == 0)
 			exit(0);
 	}
-	// printLinkedlist(a);
 	print_list(&a, &b);
 	// free(head);
 	return (0);

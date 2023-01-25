@@ -15,7 +15,6 @@
 #include "../42Barcelona_libft/libft.h"
 #include "../inc/defines.h"
 
-void printLinkedlist(t_stack *p);
 void print_list(t_stack **list_a, t_stack **list_b);
 void lstadd_back(t_stack **lst, t_stack *new);
 void add_indexes(t_stack **lst);
