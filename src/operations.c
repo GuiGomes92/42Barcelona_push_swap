@@ -8,11 +8,12 @@ void sa(t_stack **lst)
 {
     t_stack *tmp;
     tmp = *lst;
-    tmp->pre = tmp->next;
-    while (tmp != NULL) {
-     printf("%d ", tmp->content);
-     tmp = tmp->next;
-   }
+        printf("%d\n", tmp->content);
+    printf("%d\n", tmp->pre->content);
+//     while (tmp != NULL) {
+//      printf("%d ", tmp->content);
+//      tmp = tmp->next;
+//    }
 }
 //  sb - swap top two in stack B.
 //  ss - run both above at the same time.
