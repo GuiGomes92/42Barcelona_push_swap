@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gbraga-g <gbraga-g@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/01 19:51:03 by gbraga-g          #+#    #+#             */
+/*   Updated: 2023/02/01 19:51:08 by gbraga-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h>
 #include "../42Barcelona_libft/libft.h"
@@ -8,12 +20,11 @@ void sa(t_stack **lst)
 {
     t_stack *tmp;
     tmp = *lst;
-        printf("%d\n", tmp->content);
-    printf("%d\n", tmp->pre->content);
-//     while (tmp != NULL) {
-//      printf("%d ", tmp->content);
-//      tmp = tmp->next;
-//    }
+    //At the moment I'm only printing the list
+    while (tmp != NULL) {
+      printf("%d ", tmp->content);
+      tmp = tmp->next;
+    }
 }
 //  sb - swap top two in stack B.
 //  ss - run both above at the same time.
