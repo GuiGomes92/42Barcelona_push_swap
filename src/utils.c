@@ -35,6 +35,7 @@ void lstadd_back(t_stack **lst, t_stack *new)
 	{
 		last = lstlast(*lst);
 		last->next = new;
+		last->pre = *lst;
 	}
 	else
 	{

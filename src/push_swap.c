@@ -41,10 +41,11 @@ int main(int argc, char **argv)
 			exit(0);
 		if (argc == 4)
 		{
-			ft_handle3(&a);
+			sa(&a);
+			//ft_handle3(&a);
 		};
 	}
-	print_list(&a, &b);
+	//print_list(&a, &b);
 	// free(head);
 	return (0);
 };
