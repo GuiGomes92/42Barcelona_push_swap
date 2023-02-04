@@ -42,10 +42,10 @@ int main(int argc, char **argv)
 		if (argc == 4)
 		{
 			sa(&a);
-			//ft_handle3(&a);
+			ft_handle3(&a);
 		};
 	}
-	//print_list(&a, &b);
-	// free(head);
+	print_list(&a, &b);
+	//  free(head);
 	return (0);
 };
