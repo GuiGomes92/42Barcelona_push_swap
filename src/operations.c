@@ -29,10 +29,6 @@ void sa(t_stack **lst)
     tmp->pre = NULL;
     *lst = tmp;
     free(tmp);
-    // if(stack == "a")
-    //   write(1, 'sa', 2);
-    // else if (stack == "b")
-    //   write(1, 'sb', 2);
 }
 
 //  rra - Bottom number goes to top of stack A.
@@ -46,19 +42,23 @@ void rra(t_stack **lst)
     tmp->next = (*lst);
     tmp->pre = NULL;
     *lst = tmp;
-
-    // lstlast(tmp)->pre = NULL;
-    // lstlast(tmp)->next = NULL;
-    // *lst = tmp;
-    // free(tmp);
-    // if(stack == "a")
-    //   write(1, 'rra', 2);
-    // else if (stack == "b")
-    //   write(1, 'rrb', 2);
+    free(tmp);
 }
 
 //  ra - Top number goes to bottom of stack A.
 //  rb - Top number goes to bottom of stack B.
 //  rr - run both above at the same time.
+void ra(t_stack **lst) 
+{
+    t_stack *tmp = *lst;
+    t_stack *last = lstlast(*lst);
+    (*lst)->next->pre = NULL;
+    (*lst) = (*lst)->next;
+    last->next = tmp;
+    tmp->pre = last;
+    tmp->next = NULL;
+    free(tmp);
+}
+
 //  pa - Send top of B to top of A.
 //  pb - - Send top of A to top of B.
