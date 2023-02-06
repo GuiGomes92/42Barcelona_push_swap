@@ -16,18 +16,23 @@
 #include "../inc/pushswap.h"
 // TODO
 //  sa - swap top two in stack A.
-void sa(t_stack **lst) 
-{
-    t_stack *tmp;
-    tmp = *lst;
-    //At the moment I'm only printing the list
-    while (tmp != NULL) {
-      printf("%d ", tmp->content);
-      tmp = tmp->next;
-    }
-}
 //  sb - swap top two in stack B.
 //  ss - run both above at the same time.
+void sa(t_stack **lst, char stack) 
+{
+    t_stack *tmp = *lst;
+    tmp = (*lst)->next;
+    (*lst)->next = (*lst)->next->next;
+    (*lst)->pre = tmp;
+    (*lst)->next->pre = (*lst);
+    tmp->next = tmp->pre;
+    tmp->pre = NULL;
+    *lst = tmp;
+    // if(stack == "a")
+    //   write(1, 'sa', 2);
+    // else if (stack == "b")
+    //   write(1, 'sb', 2);
+}
 //  ra - Top number goes to bottom of stack A.
 //  rb - Top number goes to bottom of stack B.
 //  rr - run both above at the same time.
