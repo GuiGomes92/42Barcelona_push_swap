@@ -39,11 +39,11 @@ int main(int argc, char **argv)
 		add_indexes(&a);
 		if (is_sort(&a) == 0)
 			exit(0);
-		ra(&a);
+		pa(&a, &b);
 		if (argc == 4)
 		{
-			rra(&a);
-			//ft_handle3(&a);
+			// rra(&a);
+			//  ft_handle3(&a);
 		};
 	}
 	print_list(&a, &b);

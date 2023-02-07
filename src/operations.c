@@ -18,7 +18,7 @@
 //  sa - swap top two in stack A.
 //  sb - swap top two in stack B.
 //  ss - run both above at the same time.
-void sa(t_stack **lst) 
+void sa(t_stack **lst)
 {
     t_stack *tmp = *lst;
     tmp = (*lst)->next;
@@ -34,7 +34,7 @@ void sa(t_stack **lst)
 //  rra - Bottom number goes to top of stack A.
 //  rrb - Bottom number goes to top of stack B.
 //  rrr - run both above at the same time.
-void rra(t_stack **lst) 
+void rra(t_stack **lst)
 {
     t_stack *tmp = lstlast(*lst);
     tmp->pre->next = NULL;
@@ -48,7 +48,7 @@ void rra(t_stack **lst)
 //  ra - Top number goes to bottom of stack A.
 //  rb - Top number goes to bottom of stack B.
 //  rr - run both above at the same time.
-void ra(t_stack **lst) 
+void ra(t_stack **lst)
 {
     t_stack *tmp = *lst;
     t_stack *last = lstlast(*lst);
@@ -62,3 +62,11 @@ void ra(t_stack **lst)
 
 //  pa - Send top of B to top of A.
 //  pb - - Send top of A to top of B.
+
+void pa(t_stack **a, t_stack **b)
+{
+    t_stack *tmp = *a;
+    (*b) = tmp;
+    tmp->next = (*b);
+    (*a)->next->pre = NULL;
+}
