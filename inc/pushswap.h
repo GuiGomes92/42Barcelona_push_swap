@@ -22,7 +22,7 @@ void ft_handle3(t_stack **lst);
 void sa(t_stack **lst);
 void rra(t_stack **lst);
 void ra(t_stack **lst);
-void pa(t_stack **a, t_stack **b);
+void pb(t_stack **a, t_stack **b);
 int isAllNumbers(int argc, char **argv);
 int find_index(int num, t_stack **lst);
 int lst_len(t_stack **lst);

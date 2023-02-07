@@ -65,6 +65,7 @@ void print_list(t_stack **list_a, t_stack **list_b)
 		printf("valor en lista_1: %d, valor en index: %d\n", temp_a->content, temp_a->index);
 		temp_a = temp_a->next;
 	}
+	printf("=============================================\n");
 	while (temp_b)
 	{
 		printf("valor en lista_2: %d, valor en index: %d\n", temp_b->content, temp_b->index);

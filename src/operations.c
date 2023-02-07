@@ -63,10 +63,11 @@ void ra(t_stack **lst)
 //  pa - Send top of B to top of A.
 //  pb - - Send top of A to top of B.
 
-void pa(t_stack **a, t_stack **b)
+void pb(t_stack **a, t_stack **b)
 {
     t_stack *tmp = *a;
+    (*a) = (*a)->next;
+    tmp->next = NULL;
     (*b) = tmp;
-    tmp->next = (*b);
-    (*a)->next->pre = NULL;
+    free(tmp);
 }

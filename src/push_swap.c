@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 		add_indexes(&a);
 		if (is_sort(&a) == 0)
 			exit(0);
-		pa(&a, &b);
+		pb(&a, &b);
 		if (argc == 4)
 		{
 			// rra(&a);
@@ -47,6 +47,6 @@ int main(int argc, char **argv)
 		};
 	}
 	print_list(&a, &b);
-	//  free(head);
+	//   free(head);
 	return (0);
 };
