@@ -19,7 +19,7 @@ void print_list(t_stack **list_a, t_stack **list_b);
 void lstadd_back(t_stack **lst, t_stack *new);
 void add_indexes(t_stack **lst);
 void ft_handle3(t_stack **lst);
-void swap(t_stack **lst);
+void swap(t_stack **lst, char *command);
 void reverse(t_stack **lst);
 void rotate(t_stack **lst);
 void push(t_stack **a, t_stack **b);

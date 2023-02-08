@@ -17,5 +17,5 @@
 
 void ft_handle3(t_stack **lst)
 {
-    rra(lst);
+    (void)lst;
 }

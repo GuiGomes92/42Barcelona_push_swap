@@ -39,10 +39,10 @@ int main(int argc, char **argv)
 		add_indexes(&a);
 		if (is_sort(&a) == 0)
 			exit(0);
-		pb(&a, &b);
+		//pb(&a, &b);
 		if (argc == 4)
 		{
-			// rra(&a);
+			swap(&a, "sa");
 			//  ft_handle3(&a);
 		};
 	}

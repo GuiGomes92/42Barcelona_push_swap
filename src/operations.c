@@ -13,12 +13,16 @@
 #include <unistd.h>
 #include <stdio.h>
 #include "../42Barcelona_libft/libft.h"
+#include "../42Barcelona_ft_printf/include/ft_printf.h"
 #include "../inc/pushswap.h"
 // TODO
 //  sa - swap top two in stack A.
 //  sb - swap top two in stack B.
 //  ss - run both above at the same time.
-void swap(t_stack **lst)
+
+// For when you call the same function twice: add a null condition to the prints, send null the first one to not print and send the command string the second time.
+// Exemplo in swap:
+void swap(t_stack **lst, char *command)
 {
     t_stack *tmp = *lst;
     tmp = (*lst)->next;
@@ -29,6 +33,10 @@ void swap(t_stack **lst)
     tmp->pre = NULL;
     *lst = tmp;
     free(tmp);
+    if (command != NULL) 
+    {
+        ft_printf("%s", command);
+    }
 }
 
 //  rra - Bottom number goes to top of stack A.
