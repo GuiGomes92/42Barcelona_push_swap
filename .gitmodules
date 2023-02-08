@@ -1,3 +1,7 @@
 [submodule "42Barcelona_ft_printf"]
 	path = 42Barcelona_ft_printf
 	url = https://github.com/GuiGomes92/42Barcelona_ft_printf.git
+
+[submodule "42Barcelona_libft"]
+	path = 42Barcelona_libft
+	url = https://github.com/GuiGomes92/42Barcelona_libft.git
