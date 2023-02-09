@@ -33,16 +33,16 @@ void swap(t_stack **lst, char *command)
     tmp->pre = NULL;
     *lst = tmp;
     free(tmp);
-    if (command != NULL) 
+    if (command != NULL)
     {
-        ft_printf("%s", command);
+        ft_printf("s%s", command);
     }
 }
 
 //  rra - Bottom number goes to top of stack A.
 //  rrb - Bottom number goes to top of stack B.
 //  rrr - run both above at the same time.
-void reverse(t_stack **lst)
+void reverse(t_stack **lst, char *command)
 {
     t_stack *tmp = lstlast(*lst);
     tmp->pre->next = NULL;
@@ -51,12 +51,16 @@ void reverse(t_stack **lst)
     tmp->pre = NULL;
     *lst = tmp;
     free(tmp);
+    if (command != NULL)
+    {
+        ft_printf("rr%s", command);
+    }
 }
 
 //  ra - Top number goes to bottom of stack A.
 //  rb - Top number goes to bottom of stack B.
 //  rr - run both above at the same time.
-void rotate(t_stack **lst)
+void rotate(t_stack **lst, char *command)
 {
     t_stack *tmp = *lst;
     t_stack *last = lstlast(*lst);
@@ -66,16 +70,24 @@ void rotate(t_stack **lst)
     tmp->pre = last;
     tmp->next = NULL;
     free(tmp);
+    if (command != NULL)
+    {
+        ft_printf("r%s", command);
+    }
 }
 
 //  pa - Send top of B to top of A.
 //  pb - - Send top of A to top of B.
 
-void push(t_stack **a, t_stack **b)
+void push(t_stack **a, t_stack **b, char *command)
 {
     t_stack *tmp = *a;
     (*a) = (*a)->next;
     tmp->next = NULL;
     (*b) = tmp;
     free(tmp);
+    if (command != NULL)
+    {
+        ft_printf("p%s", command);
+    }
 }
