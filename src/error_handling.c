@@ -61,7 +61,7 @@ int isRepeated(int argc, char **argv)
   i = 1;
   while (i < argc)
   {
-    if (ft_strcmp(argv[i], "-2147483648") == 0 || ft_strcmp(argv[i], "2147483649") == 0 || ft_strcmp(argv[i], "") == 0)
+    if (ft_strcmp(argv[i], "-2147483648") == 0 || ft_strcmp(argv[i], "2147483649") == 0 || ft_strcmp(argv[i], "") == 0 || ft_strcmp(argv[i], "2147483648") == 0)
     {
       write(2, "Error\n", 6);
       return (-1);
