@@ -43,9 +43,9 @@ int main(int argc, char **argv)
 		if (is_sort(&a) == 0)
 			exit(0);
 		// pb(&a, &b);
+		push(&a, &b, "b");
 		if (argc == 4)
 		{
-			push(&a, &b, "b");
 			//  ft_handle3(&a);
 		};
 	}
