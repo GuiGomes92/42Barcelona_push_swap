@@ -5,3 +5,7 @@
 [submodule "42Barcelona_libft"]
 	path = 42Barcelona_libft
 	url = https://github.com/GuiGomes92/42Barcelona_libft.git
+
+[submodule "42Barcelona_libft"]
+	path = 42Barcelona_libft
+	url = https://github.com/gemartin99/Push-Swap-Tester.git

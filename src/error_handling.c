@@ -28,7 +28,7 @@ int isAllNumbers(int argc, char **argv)
     {
       if (ft_isdigit(argv[i][j]) != 1)
       {
-        write(1, "Error", 5);
+        write(2, "Error\n", 6);
         return (-1);
       }
       j++;
@@ -61,9 +61,14 @@ int isRepeated(int argc, char **argv)
   i = 1;
   while (i < argc)
   {
-    if (ft_strcmp(argv[i], "-2147483648") == 0 || ft_strcmp(argv[i], "2147483647") == 0)
+    if (ft_strcmp(argv[i], ""))
     {
-      write(1, "Error", 5);
+       write(2, "Error\n", 6);
+      return (-1);
+    }
+    if (ft_strcmp(argv[i], "-2147483648") == 0 || ft_strcmp(argv[i], "2147483649") == 0)
+    {
+      write(2, "Error\n", 6);
       return (-1);
     }
     j = i + 1;
@@ -71,7 +76,7 @@ int isRepeated(int argc, char **argv)
     {
       if (ft_strcmp(argv[i], argv[j]) == 0)
       {
-        write(1, "Error", 5);
+        write(2, "Error\n", 6);
         return (-1);
       }
       j++;
