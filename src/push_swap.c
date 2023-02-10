@@ -25,9 +25,6 @@ int main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 
-	t_stack *b_test = lstnew(2);
-	lstadd_back(&b, b_test);
-
 	i = 1;
 	if (argc > 1)
 	{
