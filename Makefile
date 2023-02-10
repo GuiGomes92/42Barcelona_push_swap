@@ -29,11 +29,9 @@ DEPS 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_FILES)))
 
 RM = rm -f
 
-
-
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 		mkdir -p $(OBJ_DIR)
-		$(CC) -I $(INC_DIR)  -c $(CFLAGS) -MMD $< -o $@
+		@$(CC) -I $(INC_DIR)  -c $(CFLAGS) -MMD $< -o $@
 
 all: makelibs
 	@$(MAKE) $(NAME)
@@ -48,7 +46,7 @@ bonus:
 -include $(DEPS)
 $(NAME) :	$(LIBFT_DIR)/libft.a $(PRINTF_DIR)/libftprintf.a $(OBJ) Makefile
 		make bonus -sC $(LIBFT_DIR)
-		$(CC) $(CFLAGS) $(FSANITIZE) $(OBJ) $(LIBFT_DIR)/libft.a $(PRINTF_DIR)/libftprintf.a -o $(NAME)
+		@$(CC) $(CFLAGS) $(FSANITIZE) $(OBJ) $(LIBFT_DIR)/libft.a $(PRINTF_DIR)/libftprintf.a -o $(NAME) 
 
 clean:
 		$(RM) -r $(OBJ_DIR) $(DEPS)
