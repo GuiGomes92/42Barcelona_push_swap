@@ -25,6 +25,9 @@ int main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 
+	t_stack *b_test = lstnew(2);
+	lstadd_back(&b, b_test);
+
 	i = 1;
 	if (argc > 1)
 	{
@@ -39,10 +42,10 @@ int main(int argc, char **argv)
 		add_indexes(&a);
 		if (is_sort(&a) == 0)
 			exit(0);
-		//pb(&a, &b);
+		// pb(&a, &b);
 		if (argc == 4)
 		{
-			swap(&a, "sa");
+			push(&a, &b, "b");
 			//  ft_handle3(&a);
 		};
 	}

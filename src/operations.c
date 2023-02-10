@@ -84,7 +84,15 @@ void push(t_stack **a, t_stack **b, char *command)
     t_stack *tmp = *a;
     (*a) = (*a)->next;
     tmp->next = NULL;
-    (*b) = tmp;
+    if (b == NULL)
+    {
+        (*b) = tmp;
+    }
+    else
+    {
+        (*b)->pre = tmp;
+        tmp->next = (*b);
+    }
     free(tmp);
     if (command != NULL)
     {
