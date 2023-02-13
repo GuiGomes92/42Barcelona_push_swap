@@ -50,3 +50,9 @@ void ft_handle3(t_stack **lst)
         reverse(lst, "a");
     }
 }
+
+void ft_handle5(t_stack **lst_a, t_stack **lst_b)
+{
+    push(lst_a, lst_b, "b");
+    push(lst_a, lst_b, "b");
+}
