@@ -32,7 +32,6 @@ void swap(t_stack **lst, char *command)
     tmp->next = tmp->pre;
     tmp->pre = NULL;
     *lst = tmp;
-    free(tmp);
     if (command != NULL)
     {
         ft_printf("s%s", command);
@@ -50,7 +49,6 @@ void reverse(t_stack **lst, char *command)
     tmp->next = (*lst);
     tmp->pre = NULL;
     *lst = tmp;
-    free(tmp);
     if (command != NULL)
     {
         ft_printf("rr%s", command);
@@ -69,7 +67,6 @@ void rotate(t_stack **lst, char *command)
     last->next = tmp;
     tmp->pre = last;
     tmp->next = NULL;
-    free(tmp);
     if (command != NULL)
     {
         ft_printf("r%s", command);
@@ -86,7 +83,6 @@ void push(t_stack **a, t_stack **b, char *command)
     tmp->next = (*b);
     tmp->pre = NULL;
     (*b) = tmp;
-    free(tmp);
     if (command != NULL)
     {
         ft_printf("p%s", command);

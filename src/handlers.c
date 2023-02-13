@@ -17,5 +17,36 @@
 
 void ft_handle3(t_stack **lst)
 {
-    (void)lst;
+    // Case 1:
+    if ((*lst)->index == 1 && lstlast(*lst)->index == 2)
+    {
+        swap(lst, "a");
+    }
+
+    // Case 2 :
+    if ((*lst)->index == 2 && lstlast(*lst)->index == 0)
+    {
+        swap(lst, "a");
+        // printf("Hello");
+        reverse(lst, "a");
+    }
+
+    // case 3
+    if ((*lst)->index == 2 && lstlast(*lst)->index == 1)
+    {
+        rotate(lst, "a");
+    }
+
+    // case 4
+    if ((*lst)->index == 0 && lstlast(*lst)->index == 1)
+    {
+        swap(lst, "a");
+        rotate(lst, "a");
+    }
+
+    // case 5
+    if ((*lst)->index == 1 && lstlast(*lst)->index == 0)
+    {
+        reverse(lst, "a");
+    }
 }
