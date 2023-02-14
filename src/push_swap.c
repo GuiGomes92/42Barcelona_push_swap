@@ -12,7 +12,8 @@
 
 #include <unistd.h>
 #include <stdio.h>
-#include "../42Barcelona_libft/libft.h"
+#include "../42Barcelona_ft_printf/include/libft.h"
+#include "../42Barcelona_ft_printf/include/ft_printf.h"
 #include "../inc/pushswap.h"
 
 int main(int argc, char **argv)

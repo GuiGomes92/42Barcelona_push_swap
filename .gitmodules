@@ -2,10 +2,6 @@
 	path = 42Barcelona_ft_printf
 	url = https://github.com/GuiGomes92/42Barcelona_ft_printf.git
 
-[submodule "42Barcelona_libft"]
-	path = 42Barcelona_libft
-	url = https://github.com/GuiGomes92/42Barcelona_libft.git
-
-[submodule "42Barcelona_libft"]
-	path = 42Barcelona_libft
+[submodule "Push-Swap-Tester"]
+	path = Push-Swap-Tester
 	url = https://github.com/gemartin99/Push-Swap-Tester.git

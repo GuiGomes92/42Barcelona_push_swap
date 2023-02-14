@@ -12,7 +12,8 @@
 
 #ifndef PUSHSWAP_H
 #define PUSHSWAP_H
-#include "../42Barcelona_libft/libft.h"
+#include "../42Barcelona_ft_printf/include/libft.h"
+#include "../42Barcelona_ft_printf/include/ft_printf.h"
 #include "../inc/defines.h"
 
 void print_list(t_stack **list_a, t_stack **list_b);

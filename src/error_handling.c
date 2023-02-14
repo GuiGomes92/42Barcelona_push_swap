@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 #include "../inc/pushswap.h"
-#include "../42Barcelona_libft/libft.h"
+#include "../42Barcelona_ft_printf/include/libft.h"
+#include "../42Barcelona_ft_printf/include/ft_printf.h"
 #include <unistd.h>
 #include <stdio.h>
 

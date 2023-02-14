@@ -12,7 +12,6 @@
 
 NAME = push_swap
 CC = gcc
-LIBFT_DIR = 42Barcelona_libft
 PRINTF_DIR = 42Barcelona_ft_printf
 CFLAGS = -Wall -Wextra -Werror -g 
 INC_DIR = inc
@@ -37,22 +36,18 @@ all: makelibs
 	@$(MAKE) $(NAME)
 
 makelibs:
-		@$(MAKE) -C $(LIBFT_DIR)
 		@$(MAKE) -C $(PRINTF_DIR)
 
 bonus:
 		@$(MAKE) all
 
 -include $(DEPS)
-$(NAME) :	$(LIBFT_DIR)/libft.a $(PRINTF_DIR)/libftprintf.a $(OBJ) Makefile
-		make bonus -sC $(LIBFT_DIR)
-		@$(CC) $(CFLAGS) $(FSANITIZE) $(OBJ) $(LIBFT_DIR)/libft.a $(PRINTF_DIR)/libftprintf.a -o $(NAME) 
+$(NAME) :	$(PRINTF_DIR)/libftprintf.a $(OBJ) Makefile
+		@$(CC) $(CFLAGS) $(FSANITIZE) $(OBJ) $(PRINTF_DIR)/libftprintf.a -o $(NAME) 
 
 clean:
 		$(RM) -r $(OBJ_DIR) $(DEPS)
-		$(RM) $(LIBFT_DIR)/libft.a
 		$(RM) $(PRINTF_DIR)/libftprintf.a
-		@make fclean -C $(LIBFT_DIR)
 		@make fclean -C $(PRINTF_DIR)
 
 fclean: clean
