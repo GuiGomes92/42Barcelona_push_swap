@@ -19,13 +19,13 @@
 void ft_handle3(t_stack **lst)
 {
     // Case 1:
-    if ((*lst)->index == 1 && lstlast(*lst)->index == 2)
+    if ((*lst)->index == 1 && is_max(lstlast(*lst)->index, lst) == 1)
     {
         swap(lst, "a");
     }
 
     // Case 2 :
-    if ((*lst)->index == 2 && lstlast(*lst)->index == 0)
+    if (is_max((*lst)->index, lst) && is_min(lstlast(*lst)->index, lst) == 1)
     {
         swap(lst, "a");
         // printf("Hello");
@@ -33,13 +33,13 @@ void ft_handle3(t_stack **lst)
     }
 
     // case 3
-    if ((*lst)->index == 2 && lstlast(*lst)->index == 1)
+    if (is_max((*lst)->index, lst) == 1 && lstlast(*lst)->index == 1)
     {
         rotate(lst, "a");
     }
 
     // case 4
-    if ((*lst)->index == 0 && lstlast(*lst)->index == 1)
+    if (is_min((*lst)->index, lst) == 1 && lstlast(*lst)->index == 1)
     {
         swap(lst, "a");
         rotate(lst, "a");
@@ -56,4 +56,5 @@ void ft_handle5(t_stack **lst_a, t_stack **lst_b)
 {
     push(lst_a, lst_b, "b");
     push(lst_a, lst_b, "b");
+    ft_handle3(lst_a);
 }

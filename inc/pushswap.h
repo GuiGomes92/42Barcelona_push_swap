@@ -31,6 +31,8 @@ int lst_len(t_stack **lst);
 int is_sort(t_stack **lst);
 int isRepeated(int argc, char **argv);
 int ft_strcmp(char *s1, char *s2);
+int is_max(int n, t_stack **lst);
+int is_min(int n, t_stack **lst);
 t_stack *create_first_node(t_stack *p, char *c);
 t_stack *lstnew(int content);
 t_stack *lstlast(t_stack *lst);

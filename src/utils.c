@@ -133,3 +133,33 @@ int is_sort(t_stack **lst)
 	}
 	return (0);
 }
+
+int is_max(int n, t_stack **lst)
+{
+
+	t_stack *temp_lst;
+
+	temp_lst = *lst;
+	while (temp_lst)
+	{
+		if (temp_lst->index > n)
+			return (0);
+		temp_lst = temp_lst->next;
+	}
+	return (1);
+}
+
+int is_min(int n, t_stack **lst)
+{
+
+	t_stack *temp_lst;
+
+	temp_lst = *lst;
+	while (temp_lst)
+	{
+		if (temp_lst->index < n)
+			return (0);
+		temp_lst = temp_lst->next;
+	}
+	return (1);
+}
