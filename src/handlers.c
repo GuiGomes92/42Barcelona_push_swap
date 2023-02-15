@@ -16,54 +16,44 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void ft_handleSmall(t_stack **lst)
+void ft_handle3(t_stack **lst)
 {
-    int lstLen;
-    // t_stack *first;
+    t_stack *first;
     t_stack *last;
 
-    lstLen = lst_len(lst);
-    // first = *lst;
+    first = *lst;
     last = lstlast(*lst);
 
-    if (lstLen < 3)
+    // Case 1:
+    if (first->index == 1 && is_max(last->index, lst) == 1)
     {
-        if (last->index == 0)
-            swap(lst, "a");
+        swap(lst, "a");
     }
-    else
+
+    // Case 2 :
+    if (is_max(first->index, lst) && is_min(last->index, lst) == 1)
     {
-        // Case 1:
-        if ((*lst)->index == 1 && is_max(lstlast(*lst)->index, lst) == 1)
-        {
-            swap(lst, "a");
-        }
+        swap(lst, "a");
+        reverse(lst, "a");
+    }
 
-        // Case 2 :
-        if (is_max((*lst)->index, lst) && is_min(lstlast(*lst)->index, lst) == 1)
-        {
-            swap(lst, "a");
-            reverse(lst, "a");
-        }
+    // case 3
+    if (is_max(first->index, lst) == 1 && last->index == 1)
+    {
+        rotate(lst, "a");
+    }
 
-        // case 3
-        if (is_max((*lst)->index, lst) == 1 && lstlast(*lst)->index == 1)
-        {
-            rotate(lst, "a");
-        }
+    // case 4
+    if (is_min(first->index, lst) == 1 && last->index == 1)
+    {
+        swap(lst, "a");
+        rotate(lst, "a");
+    }
 
-        // case 4
-        if (is_min((*lst)->index, lst) == 1 && lstlast(*lst)->index == 1)
-        {
-            swap(lst, "a");
-            rotate(lst, "a");
-        }
-
-        // case 5
-        if ((*lst)->index == 1 && lstlast(*lst)->index == 0)
-        {
-            reverse(lst, "a");
-        }
+    // case 5
+    if (first->index == 1 && last->index == 0)
+    {
+        reverse(lst, "a");
     }
 }
 
@@ -71,5 +61,5 @@ void ft_handle5(t_stack **lst_a, t_stack **lst_b)
 {
     push(lst_a, lst_b, "b");
     push(lst_a, lst_b, "b");
-    ft_handleSmall(lst_a);
+    ft_handle3(lst_a);
 }
