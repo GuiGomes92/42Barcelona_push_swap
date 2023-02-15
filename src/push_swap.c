@@ -26,6 +26,7 @@ int main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 
+	(void)b;
 	i = 1;
 	if (argc > 1)
 	{
@@ -49,7 +50,7 @@ int main(int argc, char **argv)
 		// 	ft_handle5(&a, &b);
 		// };
 	}
-	print_list(&a, &b);
-	//     free(head);
+	// print_list(&a, &b);
+	//      free(head);
 	return (0);
 };

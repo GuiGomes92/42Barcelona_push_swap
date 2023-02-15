@@ -20,40 +20,49 @@ void ft_handle3(t_stack **lst)
 {
     t_stack *first;
     t_stack *last;
+    int lstLen;
 
+    lstLen = lst_len(lst);
     first = *lst;
     last = lstlast(*lst);
 
-    // Case 1:
-    if (first->index == 1 && is_max(last->index, lst) == 1)
-    {
-        swap(lst, "a");
-    }
-
-    // Case 2 :
-    if (is_max(first->index, lst) && is_min(last->index, lst) == 1)
-    {
-        swap(lst, "a");
-        reverse(lst, "a");
-    }
-
-    // case 3
-    if (is_max(first->index, lst) == 1 && last->index == 1)
+    if (lstLen == 2)
     {
         rotate(lst, "a");
     }
-
-    // case 4
-    if (is_min(first->index, lst) == 1 && last->index == 1)
+    else
     {
-        swap(lst, "a");
-        rotate(lst, "a");
-    }
+        // Case 1:
+        if (first->index == 1 && is_max(last->index, lst) == 1)
+        {
+            swap(lst, "a");
+        }
 
-    // case 5
-    if (first->index == 1 && last->index == 0)
-    {
-        reverse(lst, "a");
+        // Case 2 :
+        if (is_max(first->index, lst) && is_min(last->index, lst) == 1)
+        {
+            swap(lst, "a");
+            reverse(lst, "a");
+        }
+
+        // case 3
+        if (is_max(first->index, lst) == 1 && last->index == 1)
+        {
+            rotate(lst, "a");
+        }
+
+        // case 4
+        if (is_min(first->index, lst) == 1 && last->index == 1)
+        {
+            swap(lst, "a");
+            rotate(lst, "a");
+        }
+
+        // case 5
+        if (first->index == 1 && last->index == 0)
+        {
+            reverse(lst, "a");
+        }
     }
 }
 
