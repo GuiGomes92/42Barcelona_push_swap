@@ -16,59 +16,52 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void ft_handle3(t_stack **lst)
-{
+void ft_handleSmall(t_stack **a, t_stack **b) {
     t_stack *first;
     t_stack *last;
     int lstLen;
 
-    lstLen = lst_len(lst);
-    first = *lst;
-    last = lstlast(*lst);
-
+    lstLen = lst_len(a);
+    first = *a;
+    last = lstlast(*a);
+    
     if (lstLen == 2)
     {
-        rotate(lst, "a");
+        rotate(a, "a");
     }
-    else
-    {
-        // Case 1:
-        if (first->index == 1 && is_max(last->index, lst) == 1)
-        {
-            swap(lst, "a");
-        }
-
-        // Case 2 :
-        if (is_max(first->index, lst) && is_min(last->index, lst) == 1)
-        {
-            swap(lst, "a");
-            reverse(lst, "a");
-        }
-
-        // case 3
-        if (is_max(first->index, lst) == 1 && last->index == 1)
-        {
-            rotate(lst, "a");
-        }
-
-        // case 4
-        if (is_min(first->index, lst) == 1 && last->index == 1)
-        {
-            swap(lst, "a");
-            rotate(lst, "a");
-        }
-
-        // case 5
-        if (first->index == 1 && last->index == 0)
-        {
-            reverse(lst, "a");
-        }
+    else if (lstLen == 3) {
+        ft_handle3(a);
+    }
+    else {
+        ft_handle5(a, b, lstLen);
     }
 }
 
-void ft_handle5(t_stack **lst_a, t_stack **lst_b)
+void ft_handle3(t_stack **lst)
 {
-    push(lst_a, lst_b, "b");
-    push(lst_a, lst_b, "b");
-    ft_handle3(lst_a);
+    (void)lst;
+    //t_stack *first;
+    //t_stack *last;
+    //int lstLen;
+
+        // Case 1:
+        // Case 2:
+        // Case 3:
+        // Case 4:
+        // Case 5:
+}
+
+
+void ft_handle5(t_stack **lst_a, t_stack **lst_b, int lstLen)
+{
+    if (lstLen ==  4)
+    {
+         push(lst_a, lst_b, "b");
+         ft_handle3(lst_a);
+         push(lst_b, lst_a, "a");
+    } else {
+        push(lst_a, lst_b, "b");
+        push(lst_a, lst_b, "b");
+        ft_handle3(lst_a);
+    }
 }

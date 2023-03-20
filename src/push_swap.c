@@ -41,16 +41,16 @@ int main(int argc, char **argv)
 		add_indexes(&a);
 		if (is_sort(&a) == 0)
 			exit(0);
-		if (argc <= 4)
+		if (argc <= 5)
 		{
-			ft_handle3(&a);
+			ft_handleSmall(&a, &b);
 		};
 		// if (argc == 6)
 		// {
 		// 	ft_handle5(&a, &b);
 		// };
 	}
-	// print_list(&a, &b);
+	 print_list(&a, &b);
 	//      free(head);
 	return (0);
 };
