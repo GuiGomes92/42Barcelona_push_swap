@@ -38,16 +38,38 @@ void ft_handleSmall(t_stack **a, t_stack **b)
 
 void ft_handle3(t_stack **lst)
 {
-    (void)lst;
-    // t_stack *first;
-    // t_stack *last;
-    // int lstLen;
-
     // Case 1:
-    // Case 2:
-    // Case 3:
-    // Case 4:
-    // Case 5:
+    if ((*lst)->index == 1 && lstlast(*lst)->index == 2)
+    {
+        swap(lst, "a");
+    }
+
+    // Case 2 :
+    if ((*lst)->index == 2 && lstlast(*lst)->index == 0)
+    {
+        swap(lst, "a");
+        // printf("Hello");
+        reverse(lst, "a");
+    }
+
+    // case 3
+    if ((*lst)->index == 2 && lstlast(*lst)->index == 1)
+    {
+        rotate(lst, "a");
+    }
+
+    // case 4
+    if ((*lst)->index == 0 && lstlast(*lst)->index == 1)
+    {
+        swap(lst, "a");
+        rotate(lst, "a");
+    }
+
+    // case 5
+    if ((*lst)->index == 1 && lstlast(*lst)->index == 0)
+    {
+        reverse(lst, "a");
+    }
 }
 
 void ft_handle5(t_stack **lst_a, t_stack **lst_b, int lstLen)
@@ -67,13 +89,13 @@ void ft_handle5(t_stack **lst_a, t_stack **lst_b, int lstLen)
                 temp->next = (*lst_a);
                 temp->pre = NULL;
                 (*lst_a) = temp;
-                // push(lst_a, lst_b, "b");
+                push(lst_a, lst_b, "b");
                 break;
             }
             temp = temp->next;
         }
         ft_handle3(lst_a);
-        // push(lst_b, lst_a, "a");
+        push(lst_b, lst_a, "a");
     }
     else
     {
