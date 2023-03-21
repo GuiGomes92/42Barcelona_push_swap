@@ -55,22 +55,25 @@ void ft_handle5(t_stack **lst_a, t_stack **lst_b, int lstLen)
     // Find the smaller number, push number to B, use logic of 3 to sort and push the B number back to stack a
     if (lstLen == 4)
     {
-        t_stack *temp_a;
-        temp_a = *lst_a;
-        while (temp_a)
+        t_stack *temp;
+        temp = *lst_a;
+        while (temp)
         {
-            if (is_min(temp_a->index, lst_a) == 1)
+            if (is_min(temp->index, lst_a) == 1)
             {
-                // temp_a->next->pre = temp_a->pre;
-                // temp_a->next = *lst_a;
-                // temp_a->pre = NULL;
-                printf("%i\n", temp_a->index);
-                push(lst_a, lst_b, "b");
+                (*lst_a)->next = temp->next;
+                (*lst_a)->next->pre = (*lst_a);
+                (*lst_a)->pre = temp;
+                temp->next = (*lst_a);
+                temp->pre = NULL;
+                (*lst_a) = temp;
+                // push(lst_a, lst_b, "b");
+                break;
             }
-            temp_a = temp_a->next;
+            temp = temp->next;
         }
         ft_handle3(lst_a);
-        push(lst_b, lst_a, "a");
+        // push(lst_b, lst_a, "a");
     }
     else
     {

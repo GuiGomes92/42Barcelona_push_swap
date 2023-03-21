@@ -45,12 +45,8 @@ int main(int argc, char **argv)
 		{
 			ft_handleSmall(&a, &b);
 		};
-		// if (argc == 6)
-		// {
-		// 	ft_handle5(&a, &b);
-		// };
 	}
-	 print_list(&a, &b);
+	print_list(&a, &b);
 	//      free(head);
 	return (0);
 };
