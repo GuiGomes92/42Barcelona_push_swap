@@ -16,23 +16,22 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void ft_handleSmall(t_stack **a, t_stack **b) {
-    t_stack *first;
-    t_stack *last;
+void ft_handleSmall(t_stack **a, t_stack **b)
+{
     int lstLen;
 
     lstLen = lst_len(a);
-    first = *a;
-    last = lstlast(*a);
-    
+
     if (lstLen == 2)
     {
         rotate(a, "a");
     }
-    else if (lstLen == 3) {
+    else if (lstLen == 3)
+    {
         ft_handle3(a);
     }
-    else {
+    else
+    {
         ft_handle5(a, b, lstLen);
     }
 }
@@ -40,27 +39,41 @@ void ft_handleSmall(t_stack **a, t_stack **b) {
 void ft_handle3(t_stack **lst)
 {
     (void)lst;
-    //t_stack *first;
-    //t_stack *last;
-    //int lstLen;
+    // t_stack *first;
+    // t_stack *last;
+    // int lstLen;
 
-        // Case 1:
-        // Case 2:
-        // Case 3:
-        // Case 4:
-        // Case 5:
+    // Case 1:
+    // Case 2:
+    // Case 3:
+    // Case 4:
+    // Case 5:
 }
-
 
 void ft_handle5(t_stack **lst_a, t_stack **lst_b, int lstLen)
 {
     // Find the smaller number, push number to B, use logic of 3 to sort and push the B number back to stack a
-    if (lstLen ==  4)
+    if (lstLen == 4)
     {
-         push(lst_a, lst_b, "b");
-         ft_handle3(lst_a);
-         push(lst_b, lst_a, "a");
-    } else {
+        t_stack *temp_a;
+        temp_a = *lst_a;
+        while (temp_a)
+        {
+            if (is_min(temp_a->index, lst_a) == 1)
+            {
+                // temp_a->next->pre = temp_a->pre;
+                // temp_a->next = *lst_a;
+                // temp_a->pre = NULL;
+                printf("%i\n", temp_a->index);
+                push(lst_a, lst_b, "b");
+            }
+            temp_a = temp_a->next;
+        }
+        ft_handle3(lst_a);
+        push(lst_b, lst_a, "a");
+    }
+    else
+    {
         push(lst_a, lst_b, "b");
         push(lst_a, lst_b, "b");
         ft_handle3(lst_a);
